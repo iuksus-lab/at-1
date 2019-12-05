@@ -27,9 +27,13 @@ for i=1:length(mag_groups)
             offerry=atgetfieldvalues(ring,ind(bpmingroup(1)),'Offset',{1,2});
             roterr=atgetfieldvalues(ring,ind(bpmingroup(1)),'Rotation',{1,1});
             indALL=ind(bpmingroup);
-            ring=atsetfieldvalues(ring,indALL,'Offset'   ,offerrx,1,1);
-            ring=atsetfieldvalues(ring,indALL,'Offset'   ,offerry,1,2);
-            ring=atsetfieldvalues(ring,indALL,'Rotation' ,roterr,1,1);
+            %ring=atsetfieldvalues(ring,indALL,'Offset'   ,offerrx,1,1);
+            %ring=atsetfieldvalues(ring,indALL,'Offset'   ,offerry,1,2);
+            %ring=atsetfieldvalues(ring,indALL,'Rotation' ,roterr,1,1);
+            ring=atsetfieldvalues(ring,indALL,'Offset'   ,{1,1},offerrx);
+            ring=atsetfieldvalues(ring,indALL,'Offset'   ,{1,2},offerry);
+            ring=atsetfieldvalues(ring,indALL,'Rotation' ,{1,1},roterr);
+
         end
         
         % uniform magnet errors
